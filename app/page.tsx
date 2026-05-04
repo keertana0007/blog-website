@@ -21,16 +21,16 @@ export default async function Home() {
   const blogs = await getBlogs();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-6 py-24 animate-fade-in-up delay-100">
 
         <div className="text-center mb-28 border-b border-border pb-16">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg">
             Elevate Your <span className="text-accent italic font-light">Knowledge</span>
           </h1>
-          <p className="text-lg text-gray-400 font-light max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 font-light max-w-2xl mx-auto drop-shadow-md">
             Insights, analysis, and thought leadership from our esteemed panel of experts.
           </p>
         </div>
@@ -48,9 +48,9 @@ export default async function Home() {
                 <Link
                   key={blog.uid}
                   href={`/blog/${blog.url}`}
-                  className="group block"
+                  className="group block glass-panel p-4 rounded-2xl hover:scale-[1.02] transition-transform duration-500"
                 >
-                  <div className="relative overflow-hidden rounded-sm mb-6 border border-border">
+                  <div className="relative overflow-hidden rounded-xl mb-6 border border-border">
                     <img
                       src={
                         blog.featured_image?.url ||
@@ -61,8 +61,8 @@ export default async function Home() {
                     />
                   </div>
 
-                  <div className="px-2">
-                    <p className="text-accent text-xs tracking-[0.2em] uppercase font-bold mb-3">
+                  <div className="px-2 pb-2">
+                    <p className="text-accent text-xs tracking-[0.2em] uppercase font-bold mb-3 drop-shadow-md">
                       {authorName || "Editorial Team"}
                     </p>
                     <h2 className="text-2xl font-serif font-medium text-white mb-3 group-hover:text-accent transition-colors duration-300">
@@ -79,4 +79,5 @@ export default async function Home() {
       </main>
     </div>
   );
-}
+}
+

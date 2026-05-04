@@ -9,10 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#0a0a0a",
+        background: "#030305",
         foreground: "#f4f4f5",
         accent: "#D4AF37", // Champagne Gold
-        card: "#121212",
+        card: "rgba(20, 20, 25, 0.4)",
         border: "rgba(255, 255, 255, 0.08)",
       },
       fontFamily: {

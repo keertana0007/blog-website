@@ -18,17 +18,17 @@ export default async function AuthorsPage() {
   const authors = await getAuthors();
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
+    <div className="min-h-screen text-foreground">
       <Navbar />
 
       <main className="max-w-7xl mx-auto px-6 py-24 animate-fade-in-up delay-100">
 
         {/* Heading */}
         <div className="text-center mb-24 border-b border-border pb-16">
-          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6">
+          <h1 className="text-5xl md:text-7xl font-serif font-bold text-white mb-6 drop-shadow-lg">
             Our <span className="text-accent italic font-light">Contributors</span>
           </h1>
-          <p className="text-lg text-gray-400 font-light max-w-2xl mx-auto">
+          <p className="text-lg text-gray-300 font-light max-w-2xl mx-auto drop-shadow-md">
             The distinguished voices behind our leading publications.
           </p>
         </div>
@@ -42,7 +42,7 @@ export default async function AuthorsPage() {
               <Link
                 key={author.uid}
                 href={`/authors/${author.uid}`}
-                className="group block text-center"
+                className="group block text-center glass-panel p-8 rounded-3xl hover:-translate-y-2 transition-transform duration-500"
               >
                 <div className="relative w-32 h-32 mx-auto mb-6">
                   <div className="absolute inset-0 border border-accent/0 rounded-full scale-110 group-hover:scale-100 group-hover:border-accent transition-all duration-500"></div>
@@ -61,7 +61,7 @@ export default async function AuthorsPage() {
 
                 {author.bio && (
                   <div
-                    className="text-sm text-gray-400 font-light line-clamp-3 leading-relaxed"
+                    className="text-sm text-gray-300 font-light line-clamp-3 leading-relaxed"
                     dangerouslySetInnerHTML={{ __html: author.bio }}
                   />
                 )}
@@ -75,4 +75,5 @@ export default async function AuthorsPage() {
     </div>
   );
 }
+
 

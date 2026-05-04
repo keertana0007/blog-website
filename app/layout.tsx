@@ -24,8 +24,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className="h-full antialiased">
-      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-full flex flex-col`}>
-        {children}
+      <body className={`${inter.variable} ${playfair.variable} font-sans min-h-full flex flex-col relative`}>
+        {/* Ambient Background Elements */}
+        <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
+          <div className="absolute top-[-10%] left-[-10%] w-[50vw] h-[50vw] rounded-full aurora-orb-1 opacity-60 mix-blend-screen blur-[100px]"></div>
+          <div className="absolute bottom-[-10%] right-[-10%] w-[60vw] h-[60vw] rounded-full aurora-orb-2 opacity-50 mix-blend-screen blur-[120px]"></div>
+        </div>
+        <div className="noise-overlay"></div>
+        
+        {/* Main Content */}
+        <div className="relative z-0 flex-grow flex flex-col">
+          {children}
+        </div>
       </body>
     </html>
   );
