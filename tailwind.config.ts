@@ -9,16 +9,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        accent: "var(--accent)",
+        background: "#0a0a0a",
+        foreground: "#f4f4f5",
+        accent: "#D4AF37", // Champagne Gold
+        card: "#121212",
+        border: "rgba(255, 255, 255, 0.08)",
       },
       fontFamily: {
-        sans: ["Inter", "var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        sans: ["Inter", "var(--font-geist-sans)", "sans-serif"],
+        serif: ["var(--font-playfair)", "serif"],
+        mono: ["var(--font-geist-mono)", "monospace"],
       },
     },
   },
   plugins: [],
 };
 export default config;
+
